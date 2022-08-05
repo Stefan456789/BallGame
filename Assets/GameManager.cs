@@ -12,10 +12,10 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Temporary solution to always trigger a serve, because bot doesn't support serving yet.
+        // Temporary solution for testing
         foreach (player p in players)
         {
-            if (p is playerController)
+            if (p is bot)
             {
                 p.Serve();
             }

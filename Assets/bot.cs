@@ -29,6 +29,9 @@ public class bot : player
 
     public override void Serve()
     {
-
+        ball.transform.position = transform.position + new Vector3(0, 2, 0);
+        ball.GetComponent<Rigidbody>().velocity = serveForce;
+        ball.GetComponent<Ball>().gravity = Physics.gravity * topSpin;
+        ball.SetActive(true);
     }
 }
