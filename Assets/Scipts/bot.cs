@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bot : player
+public class Bot : Player
 {
     [Header("Stats:")]
     public float offset;

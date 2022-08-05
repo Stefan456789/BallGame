@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class player : MonoBehaviour
+public abstract class Player : MonoBehaviour
 {
 
     [Header("Player attributes:")]
@@ -29,6 +29,13 @@ public abstract class player : MonoBehaviour
             Vector3 destination = (ball.transform.position - transform.position);
             destination.Normalize();
             ball.GetComponent<Rigidbody>().velocity += (destination / 4) + additionalForce;
+            if (this is PlayerController)
+            {
+                ball.GetComponent<Ball>().botTouchedLast = false;
+            } else
+            {
+                ball.GetComponent<Ball>().botTouchedLast = true;
+            }
         }
     }
 

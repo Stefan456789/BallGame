@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class timeScale : MonoBehaviour
+public class TimeScale : MonoBehaviour
 {
     [Header("References:")]
     public Transform target;

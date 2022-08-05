@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerCameraController : MonoBehaviour
+public class PlayerCameraController : MonoBehaviour
 {
 
     [Header("References:")]

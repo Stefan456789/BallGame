@@ -11,6 +11,7 @@ public class Ball : MonoBehaviour
     [Header("Stats:")]
     public float smoothSpeed = 0.125f;
     public Vector3 gravity = Physics.gravity;
+    public bool? botTouchedLast = null;
 
 
     // Start is called before the first frame update

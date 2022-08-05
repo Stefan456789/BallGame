@@ -6,16 +6,16 @@ public class GameManager : MonoBehaviour
 {
 
     [Header("References:")]
-    public List<player> players = new List<player>();
+    public List<Player> players = new List<Player>();
 
 
     // Start is called before the first frame update
     void Start()
     {
         // Temporary solution for testing
-        foreach (player p in players)
+        foreach (Player p in players)
         {
-            if (p is bot)
+            if (p is Bot)
             {
                 p.Serve();
             }
