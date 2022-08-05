@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ball : MonoBehaviour
+public class Ball : MonoBehaviour
 {
 
     [Header("References:")]
@@ -27,7 +27,6 @@ public class ball : MonoBehaviour
             transform.position = new Vector3(0, 6, 0);
             self.velocity = Vector3.zero;
         }
-
         
     }
 

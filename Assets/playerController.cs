@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class playerController : player
 {
 
 
@@ -14,31 +14,29 @@ public class playerController : MonoBehaviour
     [Header("Character stats:")]
     public Vector3 movementDirection;
     public Vector3 aimDirection = Vector3.zero;
-    public Vector3 serveForce = new Vector3(-4, 10, 0);
     public float movementSpeed;
     public GameObject targetSphere;
-    public float topSpin = 1;
 
     [Header("References:")]
     public Rigidbody rb;
-    public GameObject ball;
     public Camera firstPersonCam;
     public Camera mainCam;
-    public GameObject myPrefab;
+    public GameObject BallPrefab;
 
     private bool serving = false;
 
 
     private List<GameObject> targetSpheres = new List<GameObject>();
 
-    void Start()
+    public override void Start()
     {
-        serve();
+        base.Start();
     }
 
     // Update is called once per frame
-    void Update()
+    public override void Update()
     {
+        base.Update();
         ProcessInputs();
         if (serving)
         {
@@ -49,7 +47,7 @@ public class playerController : MonoBehaviour
             {
                 ball.transform.position = transform.position + new Vector3(0, 2, 0);
                 ball.GetComponent<Rigidbody>().velocity = aimDirection + serveForce;
-                ball.GetComponent<ball>().gravity = Physics.gravity * topSpin;
+                ball.GetComponent<Ball>().gravity = Physics.gravity * topSpin;
                 ball.SetActive(true);
                 serving = false;
             }
@@ -90,15 +88,13 @@ public class playerController : MonoBehaviour
 
     }
 
-    void serve()
+    public override void Serve()
     {
         serving = true;
         mainCam.gameObject.SetActive(false);
         firstPersonCam.gameObject.SetActive(true);
 
-        myPrefab = Instantiate(myPrefab, transform.position + new Vector3(-15, -0.9f,0), Quaternion.identity);
-
-
+        //BallPrefab = Instantiate(BallPrefab, transform.position + new Vector3(-15, -0.9f,0), Quaternion.identity);
     }
 
     void drawAimPoints(Vector3 vel, Vector3 startingPos)
