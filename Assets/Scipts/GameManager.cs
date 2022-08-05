@@ -19,8 +19,6 @@ public class GameManager : MonoBehaviour
     {
         // Temporary solution for testing
         foreach (Player p in players)
-        // Temporary solution to always trigger a serve, because bot doesn't support serving yet.
-        foreach (Player p in players)
         MatchStart();
 
     }
