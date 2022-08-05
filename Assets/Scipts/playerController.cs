@@ -21,7 +21,6 @@ public class PlayerController : Player
     public Rigidbody rb;
     public Camera firstPersonCam;
     public Camera mainCam;
-    public GameObject BallPrefab;
 
     private bool serving = false;
 
