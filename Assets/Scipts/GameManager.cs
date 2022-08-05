@@ -20,7 +20,7 @@ public class GameManager : MonoBehaviour
         // Temporary solution for testing
         foreach (Player p in players)
         // Temporary solution to always trigger a serve, because bot doesn't support serving yet.
-        foreach (player p in players)
+        foreach (Player p in players)
         MatchStart();
 
     }
@@ -60,11 +60,9 @@ public class GameManager : MonoBehaviour
     void PlayStart(bool blueStart)
     {
         // Temporary solution to always trigger a serve, because bot doesn't support serving yet.
-        foreach (player p in players)
+        foreach (Player p in players)
         {
             if (p is Bot)
-            if (p is playerController)
-            if (p is bot)
             {
                 p.Serve();
             }

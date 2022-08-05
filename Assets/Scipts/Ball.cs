@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,11 +14,13 @@ public class Ball : MonoBehaviour
     public Vector3 gravity = Physics.gravity;
     public bool? botTouchedLast = null;
 
+    event EventHandler test;
 
     // Start is called before the first frame update
     void Start()
     {
         self.useGravity = false;
+        test.Invoke(this, null);
     }
 
     // Update is called once per frame
@@ -28,7 +31,7 @@ public class Ball : MonoBehaviour
             transform.position = new Vector3(0, 6, 0);
             self.velocity = Vector3.zero;
         }
-        
+
     }
 
     void FixedUpdate()
