@@ -59,6 +59,19 @@ public class playerController : MonoBehaviour
             move();
         }
 
+        if (firstPersonCam.gameObject.activeSelf)
+        {
+            float yRotation = firstPersonCam.transform.rotation.eulerAngles.x - Input.GetAxisRaw("Mouse Y");
+            float xRotation = firstPersonCam.transform.rotation.eulerAngles.y + Input.GetAxisRaw("Mouse X");
+            firstPersonCam.transform.rotation = Quaternion.Euler(yRotation, xRotation, 0);
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        } else
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+
     }
 
 
